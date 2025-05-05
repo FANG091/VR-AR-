@@ -1,0 +1,49 @@
+<!-- USR VR+AR 整合網站雛型 -->
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>USR成果虛擬展覽</title>
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    #nav { position: absolute; top: 10px; left: 10px; background: rgba(255,255,255,0.8); padding: 10px; border-radius: 8px; z-index: 10; }
+    #nav a { display: block; margin-bottom: 5px; color: #333; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div id="nav">
+    <strong>USR展覽導航</strong>
+    <a href="#" onclick="location.href='刺繡_ar.html'">刺繡成果 AR</a>
+    <a href="#" onclick="location.href='琉球_ar.html'">琉球USR AR</a>
+    <a href="#" onclick="location.href='戲水鯤_ar.html'">戲水鯤導覽 AR</a>
+  </div>
+
+  <a-scene>
+    <!-- 背景天空 -->
+    <a-sky color="#ECECEC"></a-sky>
+
+    <!-- 展示海報（點擊導向 AR 頁面） -->
+    <a-entity geometry="primitive: plane; height: 2; width: 1.5" 
+              material="color: #d63384" 
+              position="-2 1.6 -4" 
+              event-set__enter="scale: 1.1 1.1 1.1" 
+              event-set__leave="scale: 1 1 1" 
+              cursor-listener
+              onclick="location.href='刺繡_ar.html'">
+      <a-text value="刺繡成果
+點我啟動AR" align="center" position="0 0 0.01" color="#fff" width="2"></a-text>
+    </a-entity>
+
+    <a-entity geometry="primitive: plane; height: 2; width: 1.5" 
+              material="color: #20c997" 
+              position="2 1.6 -4" 
+              onclick="location.href='琉球_ar.html'">
+      <a-text value="琉球計畫
+點我啟動AR" align="center" position="0 0 0.01" color="#fff" width="2"></a-text>
+    </a-entity>
+  </a-scene>
+</body>
+</html>
+
