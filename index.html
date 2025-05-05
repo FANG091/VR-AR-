@@ -1,34 +1,81 @@
-
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>USR成果虛擬展覽</title>
-  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    }
+    #nav {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255,255,255,0.9);
+      padding: 10px;
+      border-radius: 8px;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    #nav a {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+      text-decoration: none;
+    }
+    .card {
+      width: 280px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .card h2 {
+      color: #d63384;
+    }
+    .card p {
+      color: #555;
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 18px;
+      background: #20c997;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+  </style>
 </head>
-<body style="margin: 0; overflow: hidden;">
-  <a-scene>
-    <a-assets>
-      <video id="bgVideo" autoplay loop="true" src="usr-hub.mp4" crossorigin="anonymous"></video>
-    </a-assets>
+<body>
+  <div id="nav">
+    <strong>USR展覽導航</strong>
+    <a href="刺繡_ar.html">刺繡成果 AR</a>
+    <a href="梓想_ar.html">梓想USR AR</a>
+    <a href="戲水鯤_ar.html">戲水鯤導覽 AR</a>
+  </div>
 
-    <a-videosphere src="#bgVideo" rotation="0 -90 0"></a-videosphere>
+  <div class="card">
+    <h2>刺繡成果</h2>
+    <p>點我啟動 AR 體驗，觀看刺繡成果展示</p>
+    <a href="刺繡_ar.html">啟動 AR</a>
+  </div>
 
-    <!-- 互動面板 -->
-    <a-entity geometry="primitive: plane; height: 2; width: 1.5" 
-              material="color: #d63384" 
-              position="-2 1.6 -4" 
-              onclick="location.href='刺繡_ar.html'">
-      <a-text value="刺繡成果\n點我啟動AR" align="center" position="0 0 0.01" color="#fff" width="2"></a-text>
-    </a-entity>
+  <div class="card">
+    <h2>梓想USR</h2>
+    <p>探索梓想USR場域的在地連結與創生</p>
+    <a href="梓想_ar.html">啟動 AR</a>
+  </div>
 
-    <a-entity geometry="primitive: plane; height: 2; width: 1.5" 
-              material="color: #20c997" 
-              position="2 1.6 -4" 
-              onclick="location.href='琉球_ar.html'">
-      <a-text value="梓想計畫\n點我啟動AR" align="center" position="0 0 0.01" color="#fff" width="2"></a-text>
-    </a-entity>
-  </a-scene>
+  <div class="card">
+    <h2>戲水鯤導覽</h2>
+    <p>虛擬導覽 + AR 展示，體驗創意水文設計</p>
+    <a href="戲水鯤_ar.html">啟動 AR</a>
+  </div>
 </body>
 </html>
