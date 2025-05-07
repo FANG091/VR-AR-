@@ -1,19 +1,134 @@
-
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>刺繡AR展示</title>
-  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/ar.js@3.3.2/aframe/build/aframe-ar.min.js"></script>
+  <title>刺繡USR成果展｜線上導覽</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: #f2f2f2;
+      color: #333;
+    }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .intro {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+      background: #fff;
+    }
+    .intro p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      color: #555;
+    }
+    .grid-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 60px 20px;
+      background: #fff;
+    }
+    .card {
+      width: 300px;
+      background: #fafafa;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 20px;
+    }
+    .card-content h3 {
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      color: #d63384;
+    }
+    .card-content p {
+      font-size: 0.95em;
+      color: #444;
+    }
+    .card-content a {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 16px;
+      background: #20c997;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+    footer {
+      background: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.85em;
+    }
+  </style>
 </head>
-<body style="margin: 0; overflow: hidden;">
-  <a-scene embedded arjs>
-    <a-marker preset='hiro'>
-      <a-box position='0 0.5 0' material='color: red;'></a-box>
-    </a-marker>
-    <a-entity camera></a-entity>
-  </a-scene>
+<body>
+  <header>
+    <h1>刺繡USR成果展｜線上導覽</h1>
+  </header>
+
+  <section class="intro">
+    <p>本展覽融合AR技術與數位互動設計，呈現傳統刺繡文化如何透過現代科技被保存、活化與再詮釋，邀請您線上體驗這場跨時空的文化旅程。</p>
+  </section>
+
+  <section class="grid-section">
+    <div class="card">
+      <img src="刺1.jpg" alt="刺繡作品">
+      <div class="card-content">
+        <h3>刺繡AR體驗</h3>
+        <p>掃描指定圖樣即可開啟3D虛實結合展示，還原歷史紋樣。</p>
+        <a href="刺繡USR.html" target="_blank">啟動AR導覽</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="workshop.jpg" alt="工作坊實況">
+      <div class="card-content">
+        <h3>工藝工作坊</h3>
+        <p>線上回顧現場教學與成果展示，延續職人精神。</p>
+        <a href="#">觀看紀錄影片</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="model.jpg" alt="3D模型展示">
+      <div class="card-content">
+        <h3>刺繡建模</h3>
+        <p>透過數位建模與動態展示，再現細膩工藝之美。</p>
+        <a href="#">進入3D展示</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 台南應用科技大學 USR 計畫｜刺繡文化線上展覽平台
+  </footer>
 </body>
 </html>
