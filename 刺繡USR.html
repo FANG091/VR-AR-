@@ -1,134 +1,347 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>刺繡USR成果展｜線上導覽</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Noto Sans TC', sans-serif;
-      background: #f2f2f2;
-      color: #333;
-    }
-    header {
-      background: #000;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-    .intro {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-      text-align: center;
-      background: #fff;
-    }
-    .intro p {
-      font-size: 1.2em;
-      line-height: 1.8;
-      color: #555;
-    }
-    .grid-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      padding: 60px 20px;
-      background: #fff;
-    }
-    .card {
-      width: 300px;
-      background: #fafafa;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-    }
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .card-content {
-      padding: 20px;
-    }
-    .card-content h3 {
-      margin-bottom: 10px;
-      font-size: 1.2em;
-      color: #d63384;
-    }
-    .card-content p {
-      font-size: 0.95em;
-      color: #444;
-    }
-    .card-content a {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 16px;
-      background: #20c997;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-    }
-    footer {
-      background: #000;
-      color: #aaa;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.85em;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上導覽網頁設計 - 參考羅浮宮</title>
+    <style>
+        /* 基本重置與全域設定 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif; /* 使用常見的無襯線字體 */
+            line-height: 1.6;
+            background-color: #f9f9f9; /* 頁面背景色 */
+            color: #333; /* 主要文字顏色 */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px; /* 主要內容容器最大寬度 */
+            margin: 0 auto; /* 容器置中 */
+            padding: 0 20px; /* 容器左右內邊距 */
+        }
+
+        /* 頁首 (Header) */
+        .site-header {
+            background-color: #1a1a1a; /* 羅浮宮風格的深色背景 */
+            color: #fff;
+            padding: 20px 0; /* 頁首上下內邊距 */
+            border-bottom: 3px solid #c8a064; /* 金色系下邊框點綴 */
+        }
+
+        .site-header .header-container {
+            display: flex;
+            justify-content: space-between; /* Logo 與導覽列左右對齊 */
+            align-items: center; /* 垂直置中對齊 */
+        }
+
+        .site-header .logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.8em; /* 標誌字體大小 */
+            font-weight: bold;
+        }
+
+        .site-header .main-navigation ul,
+        .site-header .utility-navigation ul {
+            list-style: none; /* 移除列表預設樣式 */
+            display: flex; /* 導覽項目橫向排列 */
+        }
+
+        .site-header .main-navigation ul li,
+        .site-header .utility-navigation ul li {
+            margin-left: 25px; /* 導覽項目間距 */
+        }
+
+        .site-header .main-navigation a,
+        .site-header .utility-navigation a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            letter-spacing: 0.5px; /* 輕微增加字間距 */
+            transition: color 0.3s ease; /* 滑鼠懸停顏色過渡效果 */
+        }
+        .site-header .main-navigation a:hover,
+        .site-header .utility-navigation a:hover {
+            color: #c8a064; /* 滑鼠懸停時變為金色 */
+        }
+
+        /* 頁面英雄/標題區域 (Hero Section) */
+        .page-hero {
+            background-color: #f0f0f0; /* 淺灰色背景 */
+            padding: 50px 0; /* 上下內邊距 */
+            text-align: center; /* 文字置中 */
+            margin-bottom: 50px; /* 與下方內容區的間距 */
+        }
+
+        .page-hero h1 {
+            font-size: 3em; /* 主標題字體大小 */
+            color: #2c2c2c; /* 深灰色標題 */
+            margin-bottom: 15px;
+            font-weight: 600; /* 稍粗的字重 */
+        }
+
+        .page-hero p {
+            font-size: 1.15em; /* 介紹文字大小 */
+            color: #555; /* 次要文字顏色 */
+            max-width: 750px; /* 限制文字最大寬度，使其更易讀 */
+            margin: 0 auto; /* 置中 */
+        }
+
+        /* 導覽卡片網格 (Tours Grid) */
+        .tours-section { /* 包裹網格的區塊 */
+            padding-bottom: 50px; /* 區塊底部內邊距 */
+        }
+        
+        .tours-grid {
+            display: grid;
+            /* 自動調整欄數，每欄最小300px，最大1fr (填滿剩餘空間) */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 35px; /* 卡片間的間隙 */
+        }
+
+        .tour-card {
+            background-color: #fff; /* 卡片背景色 */
+            border: 1px solid #e0e0e0; /* 卡片邊框 */
+            border-radius: 8px; /* 卡片圓角 */
+            overflow: hidden; /* 確保圖片等內容不超出圓角範圍 */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08); /* 卡片陰影 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* 滑鼠懸停動畫效果 */
+            display: flex; /* 使用 flexbox 進行內部佈局 */
+            flex-direction: column; /* 內部元素垂直排列 */
+        }
+
+        .tour-card:hover {
+            transform: translateY(-6px); /* 滑鼠懸停時輕微上移 */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12); /* 增強陰影 */
+        }
+
+        .tour-card .card-image-container {
+             width: 100%;
+             height: 220px; /* 固定圖片容器高度 */
+             overflow: hidden; /* 隱藏超出部分的圖片 */
+        }
+
+        .tour-card img {
+            width: 100%;
+            height: 100%; 
+            object-fit: cover; /* 保持圖片比例並填滿容器，可能裁切 */
+            display: block; /* 移除圖片底部多餘空間 */
+            transition: transform 0.4s ease; /* 圖片放大效果 */
+        }
+
+        .tour-card:hover img {
+            transform: scale(1.05); /* 滑鼠懸停時圖片輕微放大 */
+        }
+
+        .tour-card-content {
+            padding: 25px; /* 卡片內容區內邊距 */
+            flex-grow: 1; /* 使內容區填滿卡片剩餘空間 */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tour-card-content h2 {
+            font-size: 1.6em; /* 卡片標題大小 */
+            color: #333; 
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .tour-card-content p {
+            font-size: 0.98em; /* 卡片描述文字大小 */
+            color: #555;
+            margin-bottom: 25px;
+            flex-grow: 1; /* 使描述填滿可用空間，讓按鈕對齊底部 */
+        }
+
+        .btn { /* 按鈕樣式 */
+            display: inline-block;
+            background-color: #8a6d3b; /* 參考羅浮宮的棕金色 */
+            color: #fff;
+            padding: 12px 25px; /* 按鈕內邊距 */
+            text-decoration: none;
+            border-radius: 5px; /* 按鈕圓角 */
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #745b30; /* 滑鼠懸停時按鈕顏色加深 */
+            transform: translateY(-2px); /* 按鈕輕微上移 */
+        }
+
+        /* 頁尾 (Footer) */
+        .site-footer {
+            background-color: #1a1a1a; /* 與頁首一致的深色背景 */
+            color: #b0b0b0; /* 頁尾文字顏色 */
+            padding: 50px 0; /* 上下內邊距 */
+            font-size: 0.9em; /* 頁尾文字大小 */
+        }
+
+        .site-footer .footer-links {
+            display: flex;
+            justify-content: space-between; /* 連結區塊左右分佈 */
+            flex-wrap: wrap; /* 小螢幕時換行 */
+            margin-bottom: 35px;
+        }
+
+        .site-footer .footer-column {
+            flex: 1; /* 每個連結欄位等分空間 */
+            min-width: 220px; /* 欄位最小寬度 */
+            margin-bottom: 25px; 
+            padding: 0 15px; /* 欄位左右內邊距 */
+        }
+
+        .site-footer .footer-column h4 {
+            color: #fff; /* 欄位標題顏色 */
+            margin-bottom: 18px;
+            font-size: 1.15em;
+            font-weight: 600;
+        }
+
+        .site-footer .footer-column ul {
+            list-style: none;
+        }
+
+        .site-footer .footer-column ul li a {
+            color: #b0b0b0;
+            text-decoration: none;
+            line-height: 2; /* 增加行高使連結更易點擊 */
+            transition: color 0.3s ease;
+        }
+         .site-footer .footer-column ul li a:hover {
+            color: #c8a064; /* 滑鼠懸停時變為金色 */
+        }
+
+        .site-footer .copyright {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid #333; /* 分隔線 */
+            font-size: 0.85em;
+        }
+
+    </style>
 </head>
 <body>
-  <header>
-    <h1>刺繡USR成果展｜線上導覽</h1>
-  </header>
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="#">您的網站標誌</a>
+            </div>
+            <nav class="main-navigation">
+                <ul>
+                    <li><a href="#">參觀資訊</a></li>
+                    <li><a href="#">線上探索</a></li>
+                    <li><a href="#">近期展覽</a></li>
+                </ul>
+            </nav>
+            <div class="utility-navigation">
+                <ul>
+                    <li><a href="#">搜尋</a></li>
+                    <li><a href="#">票務中心</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
 
-  <section class="intro">
-    <p>本展覽融合AR技術與數位互動設計，呈現傳統刺繡文化如何透過現代科技被保存、活化與再詮釋，邀請您線上體驗這場跨時空的文化旅程。</p>
-  </section>
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>線上導覽體驗</h1>
+                <p>無論您身在何處，都能沉浸式探索博物館的宏偉宮殿與世界級的藝術瑰寶。立即開啟您的虛擬藝術之旅。</p>
+            </div>
+        </section>
 
-  <section class="grid-section">
-    <div class="card">
-      <img src="刺1.jpg" alt="刺繡作品">
-      <div class="card-content">
-        <h3>刺繡AR體驗</h3>
-        <p>掃描指定圖樣即可開啟3D虛實結合展示，還原歷史紋樣。</p>
-        <a href="刺繡USR.html" target="_blank">啟動AR導覽</a>
-      </div>
-    </div>
+        <section class="tours-section">
+            <div class="container">
+                <div class="tours-grid">
+                    <article class="tour-card">
+                        <div class="card-image-container">
+                             <img src="https://via.placeholder.com/400x250/ededed/808080?text=刺繡AR預覽圖" alt="刺繡成果 AR 展示">
+                        </div>
+                        <div class="tour-card-content">
+                            <h2>刺繡成果 AR 展示</h2>
+                            <p>透過擴增實境，親身體驗傳統刺繡文化的精湛工藝與細膩紋樣，感受歷史與現代科技的完美融合。</p>
+                            <a href="刺繡USR.html" class="btn">啟動 AR 體驗</a> {/* 假設您已有名為 刺繡USR.html 的檔案 */}
+                        </div>
+                    </article>
+                    
+                    <article class="tour-card">
+                        <div class="card-image-container">
+                            <img src="https://via.placeholder.com/400x250/A9A9A9/FFFFFF?text=古文明之旅" alt="古文明之旅">
+                        </div>
+                        <div class="tour-card-content">
+                            <h2>古文明的奧秘</h2>
+                            <p>穿越時空，深入探索古代文明的奇蹟，解開塵封已久的歷史謎團，見證人類智慧的結晶。</p>
+                            <a href="#" class="btn">探索此導覽</a>
+                        </div>
+                    </article>
 
-    <div class="card">
-      <img src="workshop.jpg" alt="工作坊實況">
-      <div class="card-content">
-        <h3>工藝工作坊</h3>
-        <p>線上回顧現場教學與成果展示，延續職人精神。</p>
-        <a href="#">觀看紀錄影片</a>
-      </div>
-    </div>
+                    <article class="tour-card">
+                         <div class="card-image-container">
+                            <img src="https://via.placeholder.com/400x250/D3D3D3/000000?text=現代藝術鑑賞" alt="現代藝術鑑賞">
+                        </div>
+                        <div class="tour-card-content">
+                            <h2>現代藝術鑑賞</h2>
+                            <p>走進現代藝術的多彩世界，欣賞大師們的創新表達，感受突破傳統的視覺衝擊與思想啟迪。</p>
+                            <a href="#" class="btn">探索此導覽</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <div class="card">
-      <img src="model.jpg" alt="3D模型展示">
-      <div class="card-content">
-        <h3>刺繡建模</h3>
-        <p>透過數位建模與動態展示，再現細膩工藝之美。</p>
-        <a href="#">進入3D展示</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 台南應用科技大學 USR 計畫｜刺繡文化線上展覽平台
-  </footer>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>實用資訊</h4>
+                    <ul>
+                        <li><a href="#">開放時間與票價</a></li>
+                        <li><a href="#">交通指南</a></li>
+                        <li><a href="#">參觀須知</a></li>
+                        <li><a href="#">常見問題</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>關於博物館</h4>
+                    <ul>
+                        <li><a href="#">博物館歷史</a></li>
+                        <li><a href="#">使命與願景</a></li>
+                        <li><a href="#">館長致辭</a></li>
+                        <li><a href="#">聯絡我們</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>支持與參與</h4>
+                    <ul>
+                        <li><a href="#">贊助計畫</a></li>
+                        <li><a href="#">成為會員</a></li>
+                        <li><a href="#">志工招募</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>關注我們</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">YouTube</a></li>
+                        <li><a href="#">電子報訂閱</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 您的網站名稱. 版權所有. 本設計參考羅浮宮網站風格。</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
