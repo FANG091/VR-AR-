@@ -36,9 +36,11 @@
       color: #555;
     }
     .grid {
-      width: 100%; /* Makes the image take the full width of the card */
-      height: 180px; /* Sets a fixed height for the image */
-      object-fit: cover; /* Ensures the image covers the area, possibly cropping it */
+     .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 40px;
     }
     .card {
       background: white;
