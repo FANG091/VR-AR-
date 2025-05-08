@@ -180,29 +180,31 @@
 
         /* 頁尾 (Footer) */
         .site-footer {
-           background-color: rgba(26, 26, 26, 0.85);
-           color: #b0b0b0;
-           padding: 20px 0;
-           font-size: 0.85em; /* 頁尾文字大小 */
+            background-color: #1a1a1a; /* 與頁首一致的深色背景 */
+            color: #b0b0b0; /* 頁尾文字顏色 */
+            padding: 50px 0; /* 上下內邊距 */
+            font-size: 0.9em; /* 頁尾文字大小 */
         }
 
         .site-footer .footer-links {
             display: flex;
             justify-content: space-between; /* 連結區塊左右分佈 */
-            gap: 20px; /* 欄位間距更緊湊 */
-            margin-bottom: 20px; /* 減少底部距離 */
+            flex-wrap: wrap; /* 小螢幕時換行 */
+            margin-bottom: 35px;
         }
 
         .site-footer .footer-column {
             flex: 1; /* 每個連結欄位等分空間 */
-            min-width: 2200px; /* 欄位最小寬度 */
-            margin-bottom: 10px; 
-            padding: 0 10px; /* 欄位左右內邊距 */
+            min-width: 220px; /* 欄位最小寬度 */
+            margin-bottom: 25px; 
+            padding: 0 15px; /* 欄位左右內邊距 */
         }
 
         .site-footer .footer-column h4 {
-            margin-bottom: 10px;
-           font-size: 1em;
+            color: #fff; /* 欄位標題顏色 */
+            margin-bottom: 18px;
+            font-size: 1.15em;
+            font-weight: 600;
         }
 
         .site-footer .footer-column ul {
@@ -210,7 +212,10 @@
         }
 
         .site-footer .footer-column ul li a {
-            line-height: 1.6;
+            color: #b0b0b0;
+            text-decoration: none;
+            line-height: 2; /* 增加行高使連結更易點擊 */
+            transition: color 0.3s ease;
         }
          .site-footer .footer-column ul li a:hover {
             color: #c8a064; /* 滑鼠懸停時變為金色 */
@@ -218,9 +223,9 @@
 
         .site-footer .copyright {
             text-align: center;
-            padding-top: 8px;
-            border-top: 1px solid #444; /* 分隔線 */
-            font-size: 0.75em;
+            padding-top: 25px;
+            border-top: 1px solid #333; /* 分隔線 */
+            font-size: 0.85em;
         }
 
     </style>
