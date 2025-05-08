@@ -43,12 +43,13 @@
       border-radius: 5px;
     }
     .hero {
-      background: url('farm.jpg') no-repeat center center;
+      background: url('farm.jpg') no-repeat center center; /* 這些是來自您檔案中的原有樣式 */
       background-size: cover;
       height: 50vh;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column; /* 新增此行以垂直排列項目 */
+      align-items: center;   /* 這會將垂直排列的項目在水平方向上居中 */
+      justify-content: center; /* 這會將垂直排列的項目在垂直方向上居中 (如果空間足夠) */
       color: white;
       text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
     }
