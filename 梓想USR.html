@@ -91,6 +91,68 @@
       color: #888;
       border-top: 1px solid #eee;
     }
+    :root {
+  --main-bg: #FAF4ED;       /* 米白背景 */
+  --main-text: #3B322C;     /* 黑咖啡文字 */
+  --accent-color: #8A6D3B;  /* 木質棕（強調色） */
+  --link-color: #698474;    /* 草本綠 */
+  --border-color: #DDE1D5;  /* 淡灰綠邊線 */
+  --section-bg: #ffffff;    /* 純白區塊底色 */
+}
+
+body {
+  background-color: var(--main-bg);
+  color: var(--main-text);
+  font-family: 'Noto Sans TC', 'Helvetica Neue', sans-serif;
+  line-height: 1.8;
+}
+
+h1, h2, h3 {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--accent-color);
+}
+
+section, .card, .container {
+  background-color: var(--section-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.button, .btn {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.button:hover, .btn:hover {
+  background-color: #745b30;
+}
+
+footer {
+  background-color: #f5f5f0;
+  color: #888;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.85em;
+  border-top: 1px solid var(--border-color);
+}
+    
   </style>
 </head>
 <body>
