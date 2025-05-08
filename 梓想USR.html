@@ -82,6 +82,24 @@
       object-fit: cover;
       border: 1px solid #ddd;
     }
+  
+  .video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 高寬比 */
+  height: 0;
+  overflow: hidden;
+  margin-top: 20px;
+  border-radius: 10px;
+  {
+
+.video-container iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+    
     footer {
       text-align: center;
       padding: 30px;
@@ -107,13 +125,15 @@
 
 <div class="hero">
   <h2>走進土地的故事</h2>
-  <iframe width="800" height="450"
-    src="https://www.youtube.com/watch?v=995s6eXUyOU"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-  </iframe>
+
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/995s6eXUyOU" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
 </div>
 
   <section class="section">
