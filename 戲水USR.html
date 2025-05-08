@@ -1,137 +1,164 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>戲水鯤鯓-濱海環境永續計畫USR成果展｜線上導覽</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>台南濱海USR計畫介紹</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --main-bg: #FAF4ED;
+      --main-text: #3B322C;
+      --accent-color: #8A6D3B;
+      --border-color: #DDE1D5;
+    }
+
     body {
       font-family: 'Noto Sans TC', sans-serif;
-      background: #f2f2f2;
-      color: #333;
+      background-color: var(--main-bg);
+      color: var(--main-text);
+      line-height: 1.8;
+      margin: 0;
+      padding: 0;
     }
+
     header {
-      background: #000;
-      color: #fff;
+      background-color: white;
       padding: 40px 20px;
       text-align: center;
+      border-bottom: 1px solid var(--border-color);
     }
+
     header h1 {
-      font-size: 2em;
+      font-size: 2rem;
+      color: var(--accent-color);
       margin-bottom: 10px;
     }
-    .intro {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-      text-align: center;
-      background: #fff;
-    }
-    .intro p {
-      font-size: 1.2em;
-      line-height: 1.8;
+
+    header p {
+      font-size: 1.1rem;
       color: #555;
     }
-    .grid-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      padding: 60px 20px;
-      background: #fff;
+
+    .gallery {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+.gallery img {
+  width: 30%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.qr-block {
+  text-align: center;
+  margin-top: 20px;
+}
+.qr-block img {
+  width: 180px;
+  height: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #8A6D3B;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.btn:hover {
+  background-color: #745b30;
+}
+    
+    .section {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
-    .card {
-      width: 300px;
-      background: #fafafa;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease;
+
+    .section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: var(--accent-color);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
     }
-    .card:hover {
-      transform: translateY(-4px);
-    }
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .card-content {
-      padding: 20px;
-    }
-    .card-content h3 {
-      margin-bottom: 10px;
-      font-size: 1.2em;
-      color: #d63384;
-    }
-    .card-content p {
-      font-size: 0.95em;
+
+    .section p {
+      font-size: 1.1rem;
       color: #444;
     }
-    .card-content a {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 10px 16px;
-      background: #20c997;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-    }
+
+    <section class="section">
+  <h2>現場紀錄</h2>
+  <div class="gallery">
+    <img src="coast1.jpg" alt="濱海照片1">
+    <img src="coast2.jpg" alt="活動紀錄2">
+    <img src="coast3.jpg" alt="漁村風景3">
+  </div>
+</section>
+
+<section class="section">
+  <h2>線上導覽・立即掃描</h2>
+  <p>掃描下方 QR Code 即可進入濱海USR成果導覽頁面，包含地圖導覽、影音簡介與互動體驗。</p>
+  <div class="qr-block">
+    <img src="qrcode.png" alt="導覽QR Code">
+  </div>
+</section>
+
+<section class="section">
+  <h2>濱海生態場域 3D 模型展示</h2>
+  <p>透過模型瀏覽濱海水文設計、海堤結構與生態涵養構造。</p>
+  <a href="https://sketchfab.com/models/your-3d-model-link" target="_blank" class="btn">開啟3D互動展示</a>
+</section>
+    
     footer {
-     background: rgba(17, 17, 17, 0.85);
-      color: #aaa;
+      background-color: #f0f0f0;
+      color: #777;
       text-align: center;
-      padding: 20px;
-      font-size: 0.8em;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
+      padding: 30px;
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-color);
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>戲水鯤鯓-濱海環境永續計畫USR成果展｜線上導覽</h1>
+    <h1>台南濱海USR計畫｜地方創生與生態永續</h1>
+    <p>結合學研與社區力量，共同回應環境與產業變遷的挑戰</p>
   </header>
 
-  <section class="intro">
-    <p>本展覽融合創意設計結合水環境教育，透過虛擬模型導覽在地水文文化。</p>
+  <section class="section">
+    <h2>計畫背景</h2>
+    <p>
+      台南濱海的議題多元且複雜，區域包含台南南區到北門一帶的範圍。近年來受到土地利用的變遷（如綠能與漁業產業發展）、極端氣候的衝擊（大潮與持續降雨）、在地青年缺乏支持（導致產業未來性下降）以及養殖產業高齡化與知識斷層等問題影響，改變了原場域的生活、生態與生計環境。
+    </p>
   </section>
 
-  <section class="grid-section">
-    <div class="card">
-      <img src="刺1.jpg" alt="刺繡作品">
-      <div class="card-content">
-        <h3>計畫整體介紹</h3>
-        <p>計畫訴求與執行。</p>
-        <a href="戲水USR.html" target="_blank">啟動AR導覽</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="workshop.jpg" alt="工作坊實況">
-      <div class="card-content">
-        <h3>相關活動實況</h3>
-        <p>線上回顧現場教學與相關活動。</p>
-        <a href="#">觀看紀錄影片</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="model.jpg" alt="3D模型展示">
-      <div class="card-content">
-        <h3>設計成果介紹</h3>
-        <p>透過數位建模與動態展示。</p>
-        <a href="#">進入成果展示</a>
-      </div>
-    </div>
+  <section class="section">
+    <h2>計畫方向</h2>
+    <p>
+      藉由本校師生的專業和支援，與在地團隊共同研擬這些困境的解決方案。我們透過觀光遊憩、食魚教育、學研計畫等多元方式，鏈結學術資源與地方力量，以實際行動回應社區需求，推動濱海地區的永續發展與創新轉型。
+    </p>
   </section>
 
   <footer>
-    &copy; 2025 台南應用科技大學 USR 計畫｜刺繡文化線上展覽平台
+    &copy; 2025 台南應用科技大學｜USR地方創生計畫網站
   </footer>
+
 </body>
 </html>
